@@ -11,4 +11,4 @@ private:
 public:
     // TODO:add member functions
     dnode(T d, dnode<T> *n, dnode<T> *l);
-};
+}
