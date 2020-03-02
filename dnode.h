@@ -33,7 +33,7 @@ public:
         {
             end = end->next;
         }
-        if (*end < *node)
+        if (!(*node <* end))
         {
             end->next = node;
             node->last = end;
@@ -43,7 +43,7 @@ public:
         //if node is at end
 
         dnode<T> *p = head;
-        while (*p < *node)
+        while (!(*node<*p))
         {
             p = p->next;
         }
@@ -59,5 +59,6 @@ public:
 
 template<class T>
 bool operator<(dnode<T> t1, dnode<T> t2);
+
 
 #endif

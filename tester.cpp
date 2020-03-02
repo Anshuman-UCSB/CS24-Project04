@@ -16,7 +16,7 @@ int main(){
     printList(head);
     head->insert(head, new dnode<int>(2));
     printList(head);
-    head->insert(head, new dnode<int>(3));
+    head->insert(head, new dnode<int>(6));
     printList(head);
 
     cout <<"Successful"<<endl;
