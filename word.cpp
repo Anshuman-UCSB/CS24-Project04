@@ -20,5 +20,4 @@ void Word::insertCount(string filename){
         }
     }
     
-    head->insert(head, File(filename,1));
 }

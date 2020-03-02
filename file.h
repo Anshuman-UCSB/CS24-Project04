@@ -15,10 +15,6 @@ class File{
     bool hasMoreThan(int cnt) const;
 };
 
-bool operator>=(const File& file, int cnt){
-    return file.hasMoreThan(cnt);
-}
-
 bool operator<(const File& f1, const File& f2){
     return(f1.filename.compare(f2.filename) < 0);
 }
