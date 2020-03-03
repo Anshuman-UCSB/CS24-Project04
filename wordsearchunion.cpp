@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include<string>
+#include "bag.h"
 
 // ADD ANY HEADER FILES YOU NEED
 
