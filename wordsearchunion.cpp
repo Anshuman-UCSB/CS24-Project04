@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include<string>
+#include "bag.h"
 
 // ADD ANY HEADER FILES YOU NEED
 
@@ -77,7 +78,7 @@ int main(int argc, char* argv[])
       if(fin.eof()) {cout << "EOF " << files[i] << endl; break;}
       // Insert a single C++ statement below to print "<filename>::<word>".
       to_lower(word);
-      cont.insert_word(word,files[i]);
+      cont.addWord(word,files[i]);
     }
     fin.close();
   }
@@ -103,7 +104,7 @@ int main(int argc, char* argv[])
 
   // YOU MAY ADD CODE HERE IF NEEDED TO
   // CLEAR ANY DYNAMICALLY ALLOCATED SPACES
-  
+  cont.printUnion(word1, word2);
     
   return 0;
 }

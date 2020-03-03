@@ -1,7 +1,4 @@
-#ifndef DNODE_CPP
-#define DNODE_CPP
 
-#include "dnode.h"
 
 using namespace std;
 
@@ -21,35 +18,44 @@ dnode<T>::dnode(T d)
 }
 
 template <class T>
-void dnode<T>::insert(dnode<T> *&head, T val){
-    dnode<T> *newNode = new dnode<T>(val);
-    dnode<T> *before = node;
-    if(newNode<before){
-        newNode->next = node;
-        node->last = newNode;
-        node = node->last;
-    }
-    while(before->next != 0){
-        if(newNode<before){
-            newNode->last = before->last;
-            newNode->next = before;
-            before->last->next = newNode;
-            before->last = newNode;
-            return;
-        }
-        before = before->next;
-    }
-    before->next = newNode;
-    newNode->last = before;
-    
+bool operator<(dnode<T> t1, dnode<T> t2){
+    return t1.data<t2.data;
 }
 
-bool operator<(const dnode<int> &n1, const dnode<int> &n2){
-    return (n1.data<n2.data);
-}
-bool operator<(const dnode<File> &n1, const dnode<File> &n2)
+template<class T>
+void dnode<T>::insert(dnode<T> *&head, dnode<T> *node)
 {
-    return (n1.data.filename.compare(n2.data.filename)<0);
-}
+    if (*node < *head)
+    {
+        head->last = node;
+        node->next = head;
+        head = head->last;
+        return;
+    }
+    //if node is at beginning
 
-#endif
+    dnode<T> *end = head;
+    while (end->next != 0)
+    {
+        end = end->next;
+    }
+    if (!(*node < *end))
+    {
+        end->next = node;
+        node->last = end;
+        return;
+    }
+    //if node is at end
+
+    dnode<T> *p = head;
+    while (!(*node < *p))
+    {
+        p = p->next;
+    }
+    node->last = p->last;
+    node->next = p;
+    p->last->next = node;
+    p->last = node;
+
+    //if node is in middle
+}

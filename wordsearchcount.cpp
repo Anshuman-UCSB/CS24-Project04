@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include<string>
+#include "bag.h"
 
 // ADD ANY HEADER FILES YOU NEED
 
@@ -77,7 +78,7 @@ int main(int argc, char* argv[])
       if(fin.eof()) {cout << "EOF " << files[i] << endl; break;}
       // Insert a single C++ statement below to print "<filename>::<word>".
       to_lower(word);
-      cont.insert_word(word,files[i]);
+      cont.addWord(word,files[i]);
     }
     fin.close();
   }
@@ -98,7 +99,7 @@ int main(int argc, char* argv[])
   // at this point, the input word is stored in the
   // variable "word" and input threshold is stored in
   // variable "t"
-
+  cont.printThreshold(word,t);
   // ADD CODE HERE TO INVOKE MEMBER FUNCTIONS OF
   // BAG OBJECT CREATED AT LINE 46 FOR PRINTING
   // FILENAMES THAT CONTAINS THE GIVEN WORD

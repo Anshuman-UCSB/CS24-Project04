@@ -9,6 +9,15 @@ void File::addCount(){
     count++;
 }
 
+File::File(){
+    filename = "";
+    count = -1;
+}
+
 bool File::hasMoreThan(int cnt) const {
     return count>=cnt;
+}
+
+bool operator<(const File& f1, const File& f2){
+    return(f1.filename.compare(f2.filename) < 0);
 }

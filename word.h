@@ -9,8 +9,12 @@ class Word{
     string val;
 
     Word(string wrd);
+    Word();
+
     void insertCount(string filename);
 
 };
+
+bool operator<(Word w1, Word w2);
 
 #endif

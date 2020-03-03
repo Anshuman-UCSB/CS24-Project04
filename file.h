@@ -3,7 +3,6 @@
 #include "dnode.h"
 #include <string>
 #include <cstring>
-using namespace std;
 
 class File{
     public:
@@ -11,20 +10,12 @@ class File{
     int count;
 
     File(string name, int count);
+    File();
     void addCount();
     bool hasMoreThan(int cnt) const;
 };
 
-bool operator>=(const File& file, int cnt){
-    return file.hasMoreThan(cnt);
-}
+bool operator<(const File& f1, const File& f2);
 
-bool operator<(const File& f1, const File& f2){
-    return(f1.filename.compare(f2.filename) < 0);
-}
-
-void operator++(File & file){
-    file.addCount();
-}
 
 #endif
