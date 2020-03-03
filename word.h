@@ -1,6 +1,6 @@
 #ifndef WORD_H
 #define WORD_H
-#include "dnode.h"
+#include "dnode.cpp"
 #include "file.h"
 
 class Word{

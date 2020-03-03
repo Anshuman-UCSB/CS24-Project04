@@ -20,4 +20,5 @@ void Word::insertCount(string filename){
         }
     }
     
+    head->insert(head, new dnode<File>(File(filename, 1)));
 }

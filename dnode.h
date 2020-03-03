@@ -15,6 +15,14 @@ public:
     // TODO:add member functions
     dnode(T d, dnode<T> *n, dnode<T> *l);
     dnode(T d);
+    ~dnode(){
+        dnode<T>* p = head;
+        while(p->next!= 0){
+            p = p->next;
+            delete p->last;
+        }
+        delete p;
+    }
 
     void insert(dnode<T> *&head, dnode<T> *node)
     {

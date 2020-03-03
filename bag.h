@@ -1,14 +1,17 @@
 #ifndef BAG_H
 #define BAG_H
 
-#include "dnode.h"
+#include "dnode.cpp"
 #include "word.h"
 
 class Bag{
     public:
     dnode<Word>* head;
     Bag();
-    void addWord(string word);
+    ~Bag(){
+        delete head;
+    }
+    void addWord(string word, string filename);
 };
 
 
