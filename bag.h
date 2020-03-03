@@ -1,7 +1,7 @@
 #ifndef BAG_H
 #define BAG_H
 
-#include "dnode.cpp"
+#include "dnode.h"
 #include "word.h"
 
 class Bag{

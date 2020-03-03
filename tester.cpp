@@ -1,4 +1,4 @@
-#include "dnode.cpp"
+#include "dnode.h"
 #include <iostream>
 using namespace std;
 
@@ -14,7 +14,7 @@ int main(){
     printList(head);
     head->insert(head, new dnode<int>(5));
     printList(head);
-    head->insert(head, new dnode<int>(2));
+    head->insert(head, new dnode<int>(5));
     printList(head);
     head->insert(head, new dnode<int>(6));
     printList(head);

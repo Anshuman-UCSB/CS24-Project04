@@ -7,7 +7,7 @@ Bag::Bag(){
 }
 
 void Bag::printThreshold(string word, int thresh){
-    for(dnode<Word>* p = head;p;p->next){
+    for(dnode<Word>* p = head;p;p=p->next){
         if (p->data.val == word){
             for(dnode<File>* i = p->data.head;i;i=i->next){
                 if(i->data.hasMoreThan(thresh)){
@@ -22,7 +22,9 @@ void Bag::printThreshold(string word, int thresh){
 
 void Bag::addWord(string word, string filename){
     if(head == 0){
+        cout<<"Adding new word to bag "<<word<<", "<<filename<<endl;
         head = new dnode<Word>(word);
+        head->data.insertCount(filename);
         return;
     }
 
@@ -32,6 +34,7 @@ void Bag::addWord(string word, string filename){
             return;
         }
     }
-
-    head->insert(head,new dnode<Word>(word));
+    dnode<Word>* t = new dnode<Word>(word);
+    t->data.insertCount(filename);
+    head->insert(head,t);
 }
