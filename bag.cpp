@@ -6,6 +6,42 @@ Bag::Bag(){
     head = 0;
 }
 
+void Bag::printUnion(string w1, string w2){
+    dnode<string>* h = 0;
+    for(dnode<Word>* p = head;p;p=p->next){
+
+        if(p->data.val==w1 || p->data.val==w2){
+
+            for(dnode<File>* f = p->data.head; f; f=f->next){
+                string temp = f->data.filename;
+                bool inList = false;
+                for(dnode<string>* k = h;k;k=k->next){
+                    if(k->data == temp){
+                        inList = true;
+                    }
+                }
+
+                if(!inList){
+
+                    if(h == 0){
+
+                        h = new dnode<string>(temp);
+                    } else{
+                        h->insert(h,new dnode<string>(temp));
+                    }
+
+                }
+            }
+        }
+    }
+
+    for(;h;h=h->next){
+        cout<<h->data<<endl;
+    }
+    
+}
+
+
 void Bag::printThreshold(string word, int thresh){
     for(dnode<Word>* p = head;p;p=p->next){
         if (p->data.val == word){

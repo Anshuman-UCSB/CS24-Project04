@@ -104,7 +104,7 @@ int main(int argc, char* argv[])
 
   // YOU MAY ADD CODE HERE IF NEEDED TO
   // CLEAR ANY DYNAMICALLY ALLOCATED SPACES
-  
+  cont.printUnion(word1, word2);
     
   return 0;
 }
