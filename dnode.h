@@ -1,7 +1,6 @@
 #ifndef DNODE_H
 #define DNODE_H
-#include <iostream>
-using namespace std;
+
 
 template <class T>
 class dnode
@@ -15,20 +14,12 @@ public:
     // TODO:add member functions
     dnode(T d, dnode<T> *n, dnode<T> *l);
     dnode(T d);
-    ~dnode(){
-        dnode<T>* p = head;
-        while(p->next!= 0){
-            p = p->next;
-            delete p->last;
-        }
-        delete p;
-    }
+
 
     void insert(dnode<T> *&head, dnode<T> *node)
     {
         if (*node < *head)
         {
-            cout <<"Inserted "<<node->data<<" at beginning"<<endl;
             head->last = node;
             node->next = head;
             head = head->last;
@@ -45,7 +36,6 @@ public:
         {
             end->next = node;
             node->last = end;
-            cout << "Inserted " << node->data << " at end" << endl;
             return;
         }
         //if node is at end
@@ -59,7 +49,6 @@ public:
         node->next = p;
         p->last->next = node;
         p->last = node;
-        cout << "Inserted " << node->data << " at middle" << endl;
 
         //if node is in middle
     }

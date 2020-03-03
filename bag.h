@@ -8,10 +8,9 @@ class Bag{
     public:
     dnode<Word>* head;
     Bag();
-    ~Bag(){
-        delete head;
-    }
     void addWord(string word, string filename);
+    void printThreshold(string word, int thresh);
+
 };
 
 

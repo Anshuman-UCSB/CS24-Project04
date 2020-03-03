@@ -99,7 +99,7 @@ int main(int argc, char* argv[])
   // at this point, the input word is stored in the
   // variable "word" and input threshold is stored in
   // variable "t"
-
+  cont.printThreshold(word,t);
   // ADD CODE HERE TO INVOKE MEMBER FUNCTIONS OF
   // BAG OBJECT CREATED AT LINE 46 FOR PRINTING
   // FILENAMES THAT CONTAINS THE GIVEN WORD
