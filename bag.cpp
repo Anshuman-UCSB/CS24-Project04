@@ -22,7 +22,6 @@ void Bag::printThreshold(string word, int thresh){
 
 void Bag::addWord(string word, string filename){
     if(head == 0){
-        cout<<"Adding new word to bag "<<word<<", "<<filename<<endl;
         head = new dnode<Word>(word);
         head->data.insertCount(filename);
         return;
